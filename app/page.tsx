@@ -14,7 +14,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Solution />
-      <Problem />
+      {/* <Problem /> */}
       <CoreValues />
       <WhoIsItFor />
       <Roadmap />

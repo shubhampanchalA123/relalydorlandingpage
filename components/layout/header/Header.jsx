@@ -12,7 +12,7 @@ const Header = () => {
         
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-[#0D5C91]">
-          relayDor
+          RelayDor
         </Link>
 
         {/* Desktop Menu */}

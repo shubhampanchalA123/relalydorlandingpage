@@ -14,24 +14,25 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // change every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
-    <section id="home" className="relative overflow-hidden bg-white">
-
+    <section
+      id="home"
+      className="relative overflow-hidden bg-white"
+    >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-white via-[#F4F8FC] to-[#E6F2FA]" />
 
       {/* Decorative Blur */}
-      <div className="absolute -top-20 -left-20 w-80 h-80 bg-blue-200 opacity-30 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-100 opacity-30 rounded-full blur-3xl"></div>
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-200 opacity-30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-100 opacity-30 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-20 grid lg:grid-cols-2 items-center gap-12">
-
-        {/* LEFT CONTENT */}
+<div className="relative max-w-7xl mx-auto px-6 pt-4 sm:pt-6 pb-6 sm:pb-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-10">
+          {/* LEFT CONTENT */}
         <div className="text-center lg:text-left">
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-[#123C5A]">
@@ -47,12 +48,12 @@ export default function Hero() {
           </p>
 
           <p className="mt-4 text-base text-gray-500 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-            Relaydor enables verified doctors to securely refer patients,
+            RelayDor enables verified doctors to securely refer patients,
             collaborate in real time, and grow through a trusted nationwide network.
           </p>
 
           {/* CTA Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button className="bg-gradient-to-r from-[#1E5C8A] to-[#123C5A] text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               Join as Verified Doctor
             </button>
@@ -77,28 +78,27 @@ export default function Hero() {
 
         </div>
 
-        {/* RIGHT SQUARE ANIMATED IMAGE */}
-        {/* RIGHT SQUARE ANIMATED IMAGE */}
-<div className="relative flex justify-center lg:justify-end">
+        {/* RIGHT IMAGE */}
+        <div className="relative flex justify-center lg:justify-end">
 
-  <div className="relative w-[380px] sm:w-[420px] lg:w-[480px] aspect-square overflow-hidden rounded-3xl shadow-2xl">
+          <div className="relative w-full max-w-[350px] sm:max-w-[420px] lg:max-w-[480px] aspect-square overflow-hidden rounded-3xl shadow-2xl">
 
-    {images.map((src, i) => (
-      <Image
-        key={i}
-        src={src}
-        alt="Doctor"
-        fill
-        className={`object-cover absolute transition-opacity duration-1000 ${
-          i === index ? "opacity-100" : "opacity-0"
-        }`}
-        priority
-      />
-    ))}
+            {images.map((src, i) => (
+              <Image
+                key={i}
+                src={src}
+                alt="Doctor"
+                fill
+                className={`object-cover absolute transition-opacity duration-1000 ${
+                  i === index ? "opacity-100" : "opacity-0"
+                }`}
+                priority
+              />
+            ))}
 
-  </div>
+          </div>
 
-</div>
+        </div>
 
       </div>
     </section>
